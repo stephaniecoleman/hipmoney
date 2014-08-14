@@ -1,1 +1,9 @@
+
 $('li[data-id="<%= @stock.id %>"]').remove();	
+
+
+
+$('.user-heading h2').html($('.nav-stacked li').attr('data-ticker'));
+$('.user-heading p').html($('.nav-stacked li').attr('data-name'));
+$('.stock-logo img').attr("src", $('.nav-stacked li').attr('data-url'));
+fillChart();
