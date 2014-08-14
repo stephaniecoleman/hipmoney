@@ -787,10 +787,11 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     font-size:12px;
 }
 .right-side-accordion {
-    margin-top:6px;
+    font-size: 16px;
+    text-align: center; 
 }
 .right-side-accordion .head {
-    padding:20px;
+    padding:30px;
     text-transform:uppercase;
     width:100%;
     display:inline-block;
@@ -808,6 +809,7 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     color:#fff;
 }
 .right-side-accordion .yellow-bg {
+    height: 80px;
     background:#f3c022;
     color:#fff;
 }
