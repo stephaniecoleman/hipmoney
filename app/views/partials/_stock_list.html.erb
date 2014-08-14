@@ -28,8 +28,8 @@
             <span><a>
               <%= rs[i].ticker %>
             </a></span>
+            <span><%= link_to "", stocks_path(rs[i]), method: :delete, remote: true, class: "fa fa-minus-circle red hidden delete-button-margin" %></span>
             <span class="badge label-success pull-right r-activity">$<%= quotes[i].ask %></span>&nbsp;
-            <span><%= link_to "", stocks_path(rs[i]), method: :delete, remote: true, class: "fa fa-minus-circle red hidden" %></span>
           </li>
             <% end %>
           </ul>
