@@ -51,7 +51,7 @@ $(document).on('page:change', function () {
     if($('.nav-stacked').html().indexOf(id) < 0){
       $(this).find('.fa-check-circle').addClass('green');
       $.getJSON(link, function( stock ){ 
-        var li = '<li data-name="' + name + '" data-ticker="' + ticker + '" data-url=' + logo + ' data-id="' + id + '"><span><a>' + ticker + '</a></span><span class="badge label-success pull-right r-activity"></span>&nbsp;<span><a class="fa fa-minus-circle red" data-method="delete" data-remote="true", href="stocks/' + id + '"></a></span></li>'
+        var li = '<li data-name="' + name + '" data-ticker="' + ticker + '" data-url=' + logo + ' data-id="' + id + '"><span><a>' + ticker + '</a></span><span class="badge label-success pull-right r-activity"></span>&nbsp;<span><a class="fa fa-minus-circle red hidden delete-button-margin" data-method="delete" data-remote="true", href="stocks/' + id + '"></a></span></li>'
         $('ul.nav-stacked').prepend(li);
          $('.user-heading h2').html(stock.ticker);
          $('.user-heading p').html(stock.name);
@@ -71,29 +71,6 @@ $(document).on('page:change', function () {
   });
 
   });
-
-  // $('.fa-minus-circle.red').click(function(){
-  //    // debugger
-  //   $.ajax ({
-  //     type: 'DELETE',
-  //     url: "/stocks/" + $(this).parent().parent().attr('data-id'),
-  //     dataType: 'json',
-  //     success: function(data) {
-  //       $('li[data-id="' + data.id + '"').remove(); 
-  //     }
-  //   });
-  // });
-
-  // $('.result').click(function() {
-  //   alert('clicked');
-  //   var link = 'stocks/'+$(this).attr("data-id")+'/add'
-  //   $.ajax({
-  //     url: link,
-  //     }).done(function() {
-  //       alert('requert made');
-  //     });
-  //   $('#all').append('<div><%= j @stock.name %></div>');
-  // });
 
   $('input').on('keyup', function( e ){
     var input = $(this).val(),
@@ -125,14 +102,12 @@ $(document).on('page:change', function () {
     });
   });
 
-  $('li').hover(
-    function() {
-      $(this).find('.fa-minus-circle').removeClass("hidden")
-    },
-    function() {
-      $(this).find('.fa-minus-circle').addClass("hidden")
-    }
-  );
+  $('.nav-stacked').on('mouseenter', 'li', function(e){
+      $(this).find('.fa-minus-circle').removeClass("hidden");
+  });
 
+  $('.nav-stacked').on('mouseleave', 'li', function(e){
+      $(this).find('.fa-minus-circle').addClass("hidden");
+  });
 
 });
