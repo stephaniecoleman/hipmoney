@@ -125,5 +125,14 @@ $(document).on('page:change', function () {
     });
   });
 
+  $('li').hover(
+    function() {
+      $(this).find('.fa-minus-circle').removeClass("hidden")
+    },
+    function() {
+      $(this).find('.fa-minus-circle').addClass("hidden")
+    }
+  );
+
 
 });
