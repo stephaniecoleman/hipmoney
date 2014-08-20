@@ -26,10 +26,10 @@ function realTime(ticker){
                                 date.setHours(date.getHours());
                                 var x = date.getTime();
                                 // get the stock price from the JSON response
-                                // var y = data.query.results.quote.AskRealtime;
-                                // series.addPoint([x, parseFloat(y)], true, true);
-                                var y = Math.floor((Math.random()* 6)) + 10;
-                            series.addPoint([x, y], true, true);
+                                var y = data.query.results.quote.AskRealtime;
+                                series.addPoint([x, parseFloat(y)], true, true);
+                                // var y = Math.floor((Math.random()* 6)) + 10;
+                                // series.addPoint([x, y], true, true);
                             },
                             error: function () {
                                 console.log('could not get data');
