@@ -32,6 +32,7 @@
 
 
 //= require jquery.customSelect.min
+//= require highcharts
 //= require csv
 //= require stockcharts
 //= require okvideo.min
