@@ -103,39 +103,29 @@ $(document).on('page:change', function() {
       if (data.days > 0) {
         text =  "  <input type='text' value='"+ data.days +"' class='dial' id='dial' data-width='50' data-unit='d' data-height='50' data-max='60'>" + text;
       }
+      
       $(this.el).html(text);
 
 
       var dial = $(".dial");
-dial.knob({
-  readOnly: true
- ,fgColor: "#f3c022"
- ,bgColor: "#f3f3f3"
- ,inputColor: "#f3c022"
- ,thickness: 0.1
- ,draw: function () {
-    $(this.i).val(this.cv + this.i.attr('data-unit'))
+      dial.knob({
+                  readOnly: true,
+                  fgColor: "#f3c022",
+                  bgColor: "#f3f3f3",
+                  inputColor: "#f3c022",
+                  thickness: 0.1,
+                  draw: function () {
+                    $(this.i).val(this.cv + this.i.attr('data-unit'))
+                  },
+                });
+
+      $('#anim').on( 'click',function(){
+        var to = dial.val();
+        for( v=0; v<=to; v++ ){
+          dial.val( v ).trigger( 'change' );
+          console.log( v );
+        }
+      });
     },
-});
-
-$('#anim').on( 'click',function(){
-  var to = dial.val();
-  for( v=0; v<=to; v++ ){
-    dial.val( v ).trigger( 'change' );
-    console.log( v );
-
-  }
-});
-
-
-
-
-
-
-    },
-
   });
-
-
-
 });

@@ -27,17 +27,12 @@
 //= require jquery.flot.resize.min
 //= require jquery.flot.pie.resize
 //= require jquery.flot.animator.min
-
 //=require jquery.countdown
-
-
 //= require jquery.customSelect.min
 //= require highcharts
 //= require csv
 //= require stockcharts
 //= require okvideo.min
-
-
 //= require scripts
 //= require draggable-portlet
 

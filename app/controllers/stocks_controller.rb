@@ -1,5 +1,6 @@
 require 'csv'
 class StocksController < ApplicationController
+  
   def index
     @stocks = Stock.where('UPPER(name) LIKE UPPER(?) OR UPPER(ticker) LIKE UPPER(?)', "#{params[:query]}%", "#{params[:query]}%")
     @user_stocks = current_user.stocks
